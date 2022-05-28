@@ -51,7 +51,6 @@ public class AddService {
 
 
         Call<Product> callSync = gitHubService.listRepos(a.getOriginCurrency(),a.getFinalCurrency());
-        callSync.enqueue((Callback<Product>) this);
 
 
         Response<Product> response = null;
