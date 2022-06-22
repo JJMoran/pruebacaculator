@@ -37,8 +37,6 @@ public class AddService {
         exchangeRate.originCurrency = a.getOriginCurrency();
         exchangeRate.finalCurrency = a.getFinalCurrency();
 
-
-        /*
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -61,8 +59,8 @@ public class AddService {
         }
         Product product = response.body();
         exchangeRate.date = product.getDate();
-        exchangeRate.valor = product.getRate().get(a.getFinalCurrency());
-        */
+        exchangeRate.valor = product.getRates().get(a.getFinalCurrency());
+
 
         currencyRepository.save(exchangeRate);
         return new Result("OK");

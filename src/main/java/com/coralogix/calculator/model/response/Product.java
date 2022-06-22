@@ -7,10 +7,11 @@ public class Product implements Serializable {
 
      private static final long serialVersionUID = -4062184960852808108L;
 
+     private String base;
 
      private String date;
 
-     private Map<String, String> rate;
+     private Map<String, String> rates;
 
      public String getDate() {
           return date;
@@ -20,11 +21,19 @@ public class Product implements Serializable {
           this.date = date;
      }
 
-     public Map<String, String> getRate() {
-          return rate;
+     public Map<String, String> getRates() {
+          return rates;
      }
 
-     public void setRate(Map<String, String> rate) {
-          this.rate = rate;
+     public void setRates(Map<String, String> rates) {
+          this.rates = rates;
+     }
+
+     public String getBase() {
+          return base;
+     }
+
+     public void setBase(String base) {
+          this.base = base;
      }
 }

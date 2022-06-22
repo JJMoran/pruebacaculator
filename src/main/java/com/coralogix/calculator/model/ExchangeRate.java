@@ -2,28 +2,30 @@ package com.coralogix.calculator.model;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity()
-public class ExchangeRate {
+@Table(name="ExchangeRate")
+public class ExchangeRate  implements Serializable {
+
+
+     private static final long serialVersionUID = 1L;
 
 
      @Id
-     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-     @Column()
-     public Integer id;
+     @GeneratedValue(strategy=GenerationType.IDENTITY)
+     public Long id;
 
-     @Column()
+     @Column(name="origin_currency")
      public String originCurrency;
 
 
-     @Column()
+     @Column(name="final_currency")
      public String finalCurrency;
 
-     @Column()
      public String date;
 
 
-     @Column()
      public String valor;
 
 

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/ExchangeRate")
+@RequestMapping("/api")
 public class AddController {
 
     @Autowired
@@ -18,7 +18,10 @@ public class AddController {
         this.addService = addService;
     }
 
+
+    @PostMapping("/ExchangeRate")
     public Result getExchangeRate(@RequestBody Currency requestCurrency) {
+
         return addService.add(requestCurrency);
     }
 
